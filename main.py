@@ -1,16 +1,23 @@
-import cv2
 import sys
 import os
 import numpy as np
 from tkinter import filedialog
 from tkinter import messagebox
-from mtcnn.mtcnn import MTCNN
+from facenet_pytorch import MTCNN
+import torch
+from imutils.video import FileVideoStream
+import cv2
 import time
+import glob
+from tqdm.notebook import tqdm
+
+# 목적은 python 프로그램하고, simple하게 CNN 사용법을 알 수 있게 하는 것.
+# 되도록 코드를 준비하고, 그 이후 구체적인 안은 상담하도록.
 
 # 글로벌 변수 작성 (video, photo 에 필요할 경우 형식을 추가)
 video = ["avi", "mp4"]
 photo = ["png", "jpeg", "jpg"]
-divider = 2
+divider = 4
 detector = MTCNN()
 
 
@@ -57,6 +64,7 @@ def video_reading(file):
     frame_width = int(cap.get(3)/divider)
     frame_height = int(cap.get(4)/divider)
     size = (frame_width, frame_height)
+    print(size)
     frame_num = 0
     while True:
         # frame 읽기 및 FPS 조정
@@ -65,10 +73,8 @@ def video_reading(file):
         if ret is True:
             # 얼굴 인식 부분
             start_time = time.time()
-            print("befor_load")
             frame = cv2.resize(frame, size, interpolation=cv2.INTER_AREA)
             frame = face_detecting(frame)
-            print("afte_load")
             last_time = time.time() - start_time
             cv2.imshow('Face', frame)
             print("fps : ", int(1. / last_time), "  frame : ", frame_num)

@@ -1,1 +1,3 @@
 https://machinelearningmastery.com/how-to-perform-face-detection-with-classical-and-deep-learning-methods-in-python-with-keras/
+https://pytorch.org/get-started/locally/
+https://download.pytorch.org/whl/torch_stable.html
