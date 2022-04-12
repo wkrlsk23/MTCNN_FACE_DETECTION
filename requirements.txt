@@ -1,8 +1,5 @@
 opencv-python
 facenet-pytorch
---index-url https://download.pytorch.org/whl/cu113
 torch
---index-url https://download.pytorch.org/whl/cu113
 torchvision
---index-url https://download.pytorch.org/whl/cu113
 torchaudio
