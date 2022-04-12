@@ -1,6 +1,7 @@
 #custom
 output/
 *.mp4
+*.avi
 *.jpg
 *.png
 

@@ -1,12 +1,5 @@
-tensorflow
-matplotlib
 opencv-python
-numpy
 facenet-pytorch
-imutils
-tqdm
-glob2
-jupyter
 --index-url https://download.pytorch.org/whl/cu113
 torch
 --index-url https://download.pytorch.org/whl/cu113
